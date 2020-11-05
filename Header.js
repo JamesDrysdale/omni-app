@@ -5,7 +5,7 @@ import logo from './assets/OMNIGalacticLogo.png';
 export default function Header(props){
     return(
         <View style={styles.header}>
-            <Image source={logo} style={{ width: 50, height: 50}} />
+            <Image source={logo} style={{ width: 35, height: 35}} />
             <View>
                 <Text style={styles.text}>{props.headerDisplay}</Text>
             </View>
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         height: 70,
         alignItems: 'center',
         justifyContent: 'center',
-        paddingTop: 30,
+        // paddingTop: 30,
     },
     text: {
         fontFamily: 'OpenSans',
