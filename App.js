@@ -8,6 +8,10 @@ import { Platform } from 'react-native';
 import { useFonts } from 'expo-font';
 import { AppLoading } from 'expo';
 import Header from './Header';
+import Footer from './Footer';
+import { navigationRef } from './RootNavigation';
+import NewsDetail from './NewsDetail';
+import { startClock } from 'react-native-reanimated';
 
 const Stack = createStackNavigator();
 
@@ -22,6 +26,7 @@ export default function App() {
     return (
       <NavigationContainer
         style={{ paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0}}
+        ref={navigationRef}
       >
         <Stack.Navigator 
           initialRouteName="OMNI Galactic"
@@ -35,7 +40,17 @@ export default function App() {
               header: () => <Header headerDisplay="OMNI Galactic" />
             }}
           />
+
+          <Stack.Screen
+            name="NewsDetail"
+            component={NewsDetail}
+            options={{
+              header: () => <Header headerDisplay="News" />
+            }}
+          />
+          
         </Stack.Navigator>
+        <Footer />
       </NavigationContainer>
     );
   }
