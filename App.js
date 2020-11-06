@@ -10,6 +10,8 @@ import { AppLoading } from 'expo';
 import Header from './Header';
 import Footer from './Footer';
 import { navigationRef } from './RootNavigation';
+import NewsDetail from './NewsDetail';
+import { startClock } from 'react-native-reanimated';
 
 const Stack = createStackNavigator();
 
@@ -38,6 +40,15 @@ export default function App() {
               header: () => <Header headerDisplay="OMNI Galactic" />
             }}
           />
+
+          <Stack.Screen
+            name="NewsDetail"
+            component={NewsDetail}
+            options={{
+              header: () => <Header headerDisplay="News" />
+            }}
+          />
+          
         </Stack.Navigator>
         <Footer />
       </NavigationContainer>
