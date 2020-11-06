@@ -4,7 +4,7 @@ import * as RootNavigation from './RootNavigation';
 
 export default function Footer() {
     return (
-        <View style={Styles.footer}>
+        <View style={styles.footer}>
             <TouchableOpacity
                 style={styles.button}
                 onPress={() => RootNavigation.navigate('OMNI Galactic')}
