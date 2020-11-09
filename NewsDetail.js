@@ -9,7 +9,7 @@ export default function NewsDetail({route, navigation}) {
     const selectedPost = allPostData.find(post => post.url === url);
 
     useEffect(() => {
-        fetch('https://newsapi.org/v2/everything?q=tech&apiKey=5324d81aad3d4e54961490467f77fea9')
+        fetch('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=5324d81aad3d4e54961490467f77fea9')
             .then((response) => response.json())
             .then((json) => setAllPostData(json.articles))
             .catch((error) => console.error(error))

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { StyleSheet, Text, View, 
     ActivityIndicator, FlatList, Image, TouchableWithoutFeedback } from 'react-native';
 
@@ -8,9 +8,9 @@ export default function Home({navigation}) {
     const [newsData, setData] = useState([]);
 
     useEffect(() => {
-        fetch('https://newsapi.org/v2/everything?q=tech&apiKey=5324d81aad3d4e54961490467f77fea9')
+        fetch('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=5324d81aad3d4e54961490467f77fea9')
             .then((response) => response.json())
-            .then((json) => setData(json))
+            .then((json) => setData(json.articles))
             .catch((error) => console.error())
             .finally(() => finishLoading(false))
     }, []);
